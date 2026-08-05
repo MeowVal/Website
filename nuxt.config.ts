@@ -5,10 +5,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
   ],
   content: {
-    experimental: {
-      db: false,
-      clientDB: false
-    }
+    experimental: { sqliteConnector: 'native' },
   },
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
