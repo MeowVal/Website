@@ -3,10 +3,9 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/catkatny/public_html/
     - export PATH=/home/catkatny/nodevenv/nodeapp/22/bin:$PATH
-    - export NODE_ENV=development
     - cd /home/catkatny/website
     - export npm_config_cache=/home/catkatny/.npm-cache
-    - npm ci --prefer-offline --no-audit 2>&1 | tee npm-install.log
+    - npm install --production=false 2>&1 | tee npm-install.log
     - npm run build 2>&1 | tee npm-build.log
     - mkdir -p /home/catkatny/.deploy-tmp
     - rsync -av dist/ /home/catkatny/.deploy-tmp/ 2>&1 | tee deploy-stage.log
