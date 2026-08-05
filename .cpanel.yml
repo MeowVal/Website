@@ -2,8 +2,18 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/catkatny/public_html/
-    - export PATH=$HOME/nodevenv/nodeapp/22/bin:$PATH
-    - cd $HOME/website
-    - npm install 2>&1 | tee npm-install.log
-    - npm run build 2>&1 | tee npm-build.log
-    - rsync -av dist/ $DEPLOYPATH 2>&1 | tee deploy.log
+    - export PATH=/home/nodevenv/nodeapp/22/bin:$PATH
+    - cd /home/catkatny/website
+      # Enable npm caching for faster installs
+    - export npm_config_cache=/home/catkatny/.npm-cache
+      # Install dependencies using cache
+    - npm ci --prefer-offline --no-audit 2>&1 | tee npm-install.log
+      # Prepare atomic deployment directory
+    - mkdir -p /home/catkatny/.deploy-tmp
+    - rsync -av dist/ /home/catkatny/.deploy-tmp/ 2>&1 | tee deploy-stage.log
+
+      # Replace public_html atomically
+    - rsync -av --delete /home/catkatny/.deploy-tmp/ $DEPLOYPATH 2>&1 | tee deploy.log
+
+      # Cleanup temporary build folder
+    - rm -rf /home/catkatny/.deploy-tmp
