@@ -3,10 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/catkatny/public_html/
     - export PATH=$HOME/nodevenv/nodeapp/22/bin:$PATH
-    - cd $DEPLOYMENT_SOURCE
-    - echo "Running npm install..."
-    - npm install 2>&1 | tee npm-install.log
-    - echo "Running npm build..."
-    - npm run build 2>&1 | tee npm-build.log
-    - echo "Deploying dist..."
-    - rsync -av dist/ $DEPLOYPATH 2>&1 | tee deploy.log
+    - cd $DEPLOYMENT_SOURCE/website
+    - npm install
+    - nom run build
+    - rsync -av dist/ $DEPLOYPATH
