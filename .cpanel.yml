@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/catkatny/public_html/
-    - export PATH=/home/nodevenv/nodeapp/22/bin:$PATH
+    - export PATH=/home/catkatny/nodevenv/nodeapp/22/bin
     - cd /home/catkatny/website
       # Enable npm caching for faster installs
     - export npm_config_cache=/home/catkatny/.npm-cache
