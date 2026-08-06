@@ -3,7 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/catkatny/public_html/
     - cd /home/catkatny/website
-    - export npm_config_cache=/home/catkatny/.npm-cache
+    - #export npm_config_cache=/home/catkatny/.npm-cache
     - /home/catkatny/nodevenv/nodeapp/22/bin/node /usr/bin/npm install --production=false 2>&1 | tee npm-install.log
     - /home/catkatny/nodevenv/nodeapp/22/bin/node /usr/bin/npm run build 2>&1 | tee npm-build.log
     - mkdir -p /home/catkatny/.deploy-tmp
