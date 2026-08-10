@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 // Shader imports
-import vert from '../../..//shaders/webgl/w1p2.vert?raw'
-import frag from '../../..//shaders/webgl/w1p2.frag?raw'
+import vert from '@/shaders/webgl/w1p2.vert?raw'
+import frag from '@/shaders/webgl/w1p2.frag?raw'
 
 // WebGL utils
-import WebGLUtils from '../../../lib/webgl/webgl-utils.js'
-import MV from '../../../lib/webgl/MV.js'
+import WebGLUtils from '@/lib/webgl/webgl-utils.js'
+import MV from '@/lib/webgl/MV.js'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 

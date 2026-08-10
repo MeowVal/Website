@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue'
 
 
 // WebGL utils (place your MV.js, webgl-utils.js, initShaders.js in /src/lib/webgl/)
-import WebGLUtils from '../../../lib/webGL/webgl-utils.js'
+import WebGLUtils from '@/lib/webGL/webgl-utils.js'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 
@@ -19,8 +19,6 @@ onMounted(() => {
 
 <template>
   <div class="worksheet">
-    <p>Hai</p>
-
     <canvas ref="canvasRef" width="512" height="512">
       Please use a browser that supports HTML5 canvas.
     </canvas>

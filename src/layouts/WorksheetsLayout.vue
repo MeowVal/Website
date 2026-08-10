@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import WorksheetSidebar from '../components/WorksheetSidebar.vue'
+import WorksheetSidebar from '@/components/WorksheetSidebar.vue'
 </script>
 
 <style scoped>
