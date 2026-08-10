@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
+    - npm --scripts-prepend-node-path=auto run build
     - export DEPLOYPATH=/home/catkatny/public_html/
     - cd /home/catkatny/website
     - #export npm_config_cache=/home/catkatny/.npm-cache
