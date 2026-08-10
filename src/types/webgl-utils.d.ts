@@ -1,4 +1,4 @@
-declare module '@/lib/webGL/webgl-utils.js' {
+declare module '@/types/webgl-utils' {
     const WebGLUtils: any;
     export default WebGLUtils;
 }
