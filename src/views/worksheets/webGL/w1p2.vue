@@ -5,33 +5,19 @@ import vert from '@/shaders/webGL/w1p2.vert?raw'
 import frag from '@/shaders/webGL/w1p2.frag?raw'
 
 // WebGL utils
-import WebGLUtils from '@/lib/webGL/webgl-utils.js'
+import WebGLUtils from '@/lib/webGL/webgl2-utils.js'
 import MV from '@/lib/webGL/MV.js'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 
 onMounted(() => {
   const canvas = canvasRef.value!
-  const gl = WebGLUtils.setupWebGL(canvas)
+  const gl = canvas.getContext('webgl2')!
+  const program = WebGLUtils.createProgramFromSources(gl, [vert, frag])
+  gl.useProgram(program)
 
   gl.clearColor(0.3921, 0.5843, 0.9294, 1.0)
 
-  // Compile vertex shader
-  const vs = gl.createShader(gl.VERTEX_SHADER)!
-  gl.shaderSource(vs, vert)
-  gl.compileShader(vs)
-
-  // Compile fragment shader
-  const fs = gl.createShader(gl.FRAGMENT_SHADER)!
-  gl.shaderSource(fs, frag)
-  gl.compileShader(fs)
-
-  // Link program
-  const program = gl.createProgram()!
-  gl.attachShader(program, vs)
-  gl.attachShader(program, fs)
-  gl.linkProgram(program)
-  gl.useProgram(program)
 
   // Geometry
   const vertices = [
