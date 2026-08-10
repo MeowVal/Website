@@ -14,6 +14,9 @@ onMounted(() => {
   const canvas = canvasRef.value!
   const gl = canvas.getContext('webgl2')!
   const program = WebGLUtils.createProgramFromSources(gl, [vert, frag])
+  if (!program) {
+    throw new Error("Shader program failed to compile/link")
+  }
   gl.useProgram(program)
 
   gl.clearColor(0.3921, 0.5843, 0.9294, 1.0)
