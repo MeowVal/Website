@@ -1,4 +1,4 @@
-declare module '@/types/webgl2-utils' {
+declare module '@/lib/webGL/webgl2-utils.js' {
     export interface WebGLUtils {
         createProgram(
             gl: WebGL2RenderingContext,
