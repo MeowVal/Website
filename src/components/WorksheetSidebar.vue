@@ -5,8 +5,8 @@ import { useRoute } from 'vue-router'
 const webgl = [
   { unit: 1, part: 1, title: 'Blank Canvas' },
   { unit: 1, part: 2, title: 'Corner points of triangle' },
-  { unit: 1, part: 3, title: 'Circles' },
-  { unit: 1, part: 4, title: 'Curves' },
+  { unit: 1, part: 3, title: 'Rainbow triangle' },
+  { unit: 1, part: 4, title: 'Spinning square' },
   { unit: 1, part: 5, title: 'Bezier' },
 
   { unit: 2, part: 1, title: 'Shaders' },
