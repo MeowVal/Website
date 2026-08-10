@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue'
 
 
 // WebGL utils (place your MV.js, webgl-utils.js, initShaders.js in /src/lib/webgl/)
-import WebGLUtils from '../../../lib/webGL/webgl-utils'
+import WebGLUtils from '../../../lib/webGL/webgl-utils.js'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 

@@ -5,8 +5,8 @@ import vert from '../../..//shaders/webgl/w1p2.vert?raw'
 import frag from '../../..//shaders/webgl/w1p2.frag?raw'
 
 // WebGL utils
-import WebGLUtils from '../../../lib/webgl/webgl-utils'
-import MV from '../../../lib/webgl/MV'
+import WebGLUtils from '../../../lib/webgl/webgl-utils.js'
+import MV from '../../../lib/webgl/MV.js'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 
