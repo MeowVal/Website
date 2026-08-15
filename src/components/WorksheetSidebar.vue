@@ -9,8 +9,8 @@ const webgl = [
   { unit: 1, part: 4, title: 'Spinning square' },
   { unit: 1, part: 5, title: 'bouncing circle/disk' },
 
-  { unit: 2, part: 1, title: 'Shaders' },
-  { unit: 2, part: 2, title: 'Attributes' },
+  { unit: 2, part: 1, title: 'Interactive Point Rendering' },
+  { unit: 2, part: 2, title: 'Interactive Point Colouring with a Colour Palette' },
   { unit: 2, part: 3, title: 'Matrices' },
   { unit: 2, part: 4, title: 'Transforms' },
   { unit: 2, part: 5, title: 'Lighting' },
