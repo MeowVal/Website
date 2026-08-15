@@ -76,6 +76,8 @@ onMounted(() => {
   }
   animate();
 })
+document.title = "CatKatNya - w1p5"
+
 </script>
 
 <template>

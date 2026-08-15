@@ -115,6 +115,8 @@ onMounted(() => {
 function onClearClick() {
   if (clearCanvasFn) clearCanvasFn()
 }
+document.title = "CatKatNya - w2p2"
+
 </script>
 
 <template>

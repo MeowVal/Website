@@ -22,6 +22,7 @@ const webgpu = [
   { unit: 1, part: 4, title: 'Textures' },
   { unit: 1, part: 5, title: 'Compute' },
 ]
+document.title = "CatKatNya - Graphics Worksheets Overview"
 </script>
 
 <template>
@@ -29,21 +30,35 @@ const webgpu = [
     <h1>Graphics Worksheets Overview</h1>
 
     <h2>WebGL — Computer Graphics</h2>
-    <ul>
-      <li v-for="w in webgl" :key="`${w.unit}-${w.part}`">
-        <router-link :to="`/worksheets/webgl/w${w.unit}p${w.part}`">
-          w{{ w.unit }}p{{ w.part }} — {{ w.title }}
-        </router-link>
-      </li>
-    </ul>
-
+    <div class="container">
+      <ul class="list">
+        <li v-for="w in webgl" :key="`${w.unit}-${w.part}`">
+          <router-link :to="`/worksheets/webgl/w${w.unit}p${w.part}`">
+            w{{ w.unit }}p{{ w.part }} — {{ w.title }}
+          </router-link>
+        </li>
+      </ul>
+    </div>
     <h2>WebGPU — Rendering</h2>
-    <ul>
-      <li v-for="w in webgpu" :key="`${w.unit}-${w.part}`">
-        <router-link :to="`/worksheets/webgpu/w${w.unit}p${w.part}`">
-          w{{ w.unit }}p{{ w.part }} — {{ w.title }}
-        </router-link>
-      </li>
-    </ul>
+    <div class="container">
+      <ul class="list">
+        <li v-for="w in webgpu" :key="`${w.unit}-${w.part}`">
+          <router-link :to="`/worksheets/webgpu/w${w.unit}p${w.part}`">
+            w{{ w.unit }}p{{ w.part }} — {{ w.title }}
+          </router-link>
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
+<style scoped>
+.container {
+  text-align: center;
+}
+.list {
+  display: inline-block;
+  list-style-type: disc;
+  list-style-position: outside;
+  text-align: center;
+}
+</style>

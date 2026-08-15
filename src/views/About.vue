@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+document.title = "CatKatNya - About Me"
 </script>
 
 <template>

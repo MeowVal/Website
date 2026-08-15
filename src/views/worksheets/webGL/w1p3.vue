@@ -43,6 +43,8 @@ onMounted(() => {
   gl.clear(gl.COLOR_BUFFER_BIT);
   gl.drawArrays(gl.TRIANGLES, 0, numVertices);
 })
+document.title = "CatKatNya - w1p3"
+
 </script>
 
 <template>

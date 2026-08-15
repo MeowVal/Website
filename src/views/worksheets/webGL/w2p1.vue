@@ -84,6 +84,8 @@ onMounted(() => {
 
   }
 })
+document.title = "CatKatNya - w2p1"
+
 </script>
 
 <template>
