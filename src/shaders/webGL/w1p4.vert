@@ -6,8 +6,13 @@ uniform float theta;
 void main() {
     v_Color = a_Color;
 
-    gl_Position.x = -sin(theta) * a_Position.x + cos(theta) * a_Position.y;
-    gl_Position.y =  sin(theta) * a_Position.y + cos(theta) * a_Position.x;
-    gl_Position.z = 0.0;
-    gl_Position.w = 1.0;
+    float s = sin(theta);
+    float c = cos(theta);
+
+    vec2 rotated = vec2(
+            c * a_Position.x - s * a_Position.y,
+            s * a_Position.x + c * a_Position.y
+    );
+
+    gl_Position = vec4(rotated, 0.0, 1.0);
 }

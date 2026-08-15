@@ -7,7 +7,7 @@ const webgl = [
   { unit: 1, part: 2, title: 'Corner points of triangle' },
   { unit: 1, part: 3, title: 'Rainbow triangle' },
   { unit: 1, part: 4, title: 'Spinning square' },
-  { unit: 1, part: 5, title: 'Bezier' },
+  { unit: 1, part: 5, title: 'bouncing circle/disk' },
 
   { unit: 2, part: 1, title: 'Shaders' },
   { unit: 2, part: 2, title: 'Attributes' },

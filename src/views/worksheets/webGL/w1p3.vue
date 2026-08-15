@@ -21,22 +21,22 @@ onMounted(() => {
   gl.clearColor(0.3921, 0.5843, 0.9294, 1.0);
 
 
-  var vertices = [ MV.vec2(0.0, 0.0), MV.vec2(1.0, 1.0), MV.vec2(1.0, 0.0) ];
-  var colours = [ MV.vec4(1.0, 0.0, 0.0, 1.0), MV.vec4(0.0, 0.0, 1.0, 1.0), MV.vec4(0.0, 1.0, 0.0, 1.0) ];
-  var numVertices = vertices.length;
-  var vBuffer = gl.createBuffer();
+  const vertices = [MV.vec2(0.0, 0.0), MV.vec2(1.0, 1.0), MV.vec2(1.0, 0.0)];
+  const colours = [MV.vec4(1.0, 0.0, 0.0, 1.0), MV.vec4(0.0, 0.0, 1.0, 1.0), MV.vec4(0.0, 1.0, 0.0, 1.0)];
+  const numVertices = vertices.length;
+  const vBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, vBuffer);
   gl.bufferData(gl.ARRAY_BUFFER, MV.flatten(vertices), gl.STATIC_DRAW);
 
-  var vPosition = gl.getAttribLocation(program, "a_Position");
+  const vPosition = gl.getAttribLocation(program, "a_Position");
   gl.vertexAttribPointer(vPosition, 2, gl.FLOAT, false, 0, 0);
   gl.enableVertexAttribArray(vPosition);
 
-  var cBuffer = gl.createBuffer();
+  const cBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, cBuffer);
   gl.bufferData(gl.ARRAY_BUFFER, MV.flatten(colours), gl.STATIC_DRAW);
 
-  var vColour = gl.getAttribLocation(program, "a_Color");
+  const vColour = gl.getAttribLocation(program, "a_Color");
   gl.vertexAttribPointer(vColour, 4, gl.FLOAT, false, 0, 0);
   gl.enableVertexAttribArray(vColour);
 
