@@ -113,7 +113,7 @@ onMounted(() => {
       MV.vec2(point[0] + offset, point[1] - offset),
       MV.vec2(point[0] + offset, point[1] + offset),
     ];
-    array.push(...coords);
+    array.push.apply(array, coords);
   }
 
   function addColour(i: number, c: number) {
@@ -167,8 +167,8 @@ onMounted(() => {
       index %= maxVerts;
 
       tri++;
-      temp.push(mousepos);
-      col.push(colour);
+      temp = temp.concat(mousepos);
+      col = col.concat(colour);
 
       if (tri === 3) {
         p = [];
