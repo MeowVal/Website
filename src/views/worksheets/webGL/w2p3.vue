@@ -103,7 +103,7 @@ onMounted(() => {
     p = [];
   }
 
-  function addSquare(array: any[], point: number[], size: number) {
+  function addSquare(array: any[], point: any, size: number) {
     const offset = size / 2;
     const coords = [
       MV.vec2(point[0] - offset, point[1] - offset),
@@ -116,7 +116,7 @@ onMounted(() => {
     array.push.apply(array, coords);
   }
 
-  function addColour(i: number, c: number) {
+  function addColour(i: number, c:  any) {
     gl.bindBuffer(gl.ARRAY_BUFFER, cBuffer);
     gl.bufferSubData(gl.ARRAY_BUFFER, i*MV.sizeof['vec4'], MV.flatten(c));
   }
@@ -167,8 +167,8 @@ onMounted(() => {
       index %= maxVerts;
 
       tri++;
-      temp = temp.concat(mousepos);
-      col = col.concat(colour);
+      temp.push(mousepos);
+      col.push(colour);
 
       if (tri === 3) {
         p = [];
