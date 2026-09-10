@@ -116,7 +116,7 @@ onMounted(() => {
     array.push.apply(array, coords);
   }
 
-  function addColour(i: number, c:  any) {
+  function addColour(i: number, c:  any[]) {
     gl.bindBuffer(gl.ARRAY_BUFFER, cBuffer);
     gl.bufferSubData(gl.ARRAY_BUFFER, i*MV.sizeof['vec4'], MV.flatten(c));
   }
